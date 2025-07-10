@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Chiya Bhaithak</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Navigation Bar Starts -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html"><img src="Images/logo.png" alt="Chiya Bhaithak"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Navigation Bar Ends -->
+
+  <!-- Contact Section Starts -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-text">
+        <h2>Get in Touch</h2>
+        <p>Have a question, suggestion, or just want to say hello? Fill out the form and we’ll get back to you as soon as possible.</p>
+      </div>
+      <form id="contactForm" onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Contact Section Ends -->
+
+  <!-- Footer Section Starts -->
+  <footer>
+    <div class="footer-content">
+      <p><strong>Chiya Bhaithak</strong> &copy; 2025</p>
+      <p>Location: Budhanilkantha, Kathmandu, Nepal</p>
+      <p>Email us: <a href="mailto:info@chiyabhaithak.com">info@chiyabhaithak.com</a></p>
+      <p>Visit: 
+        <a href="https://www.linkedin.com/in/acharya-prajwal/" target="_blank">Linkden</a> |
+      <a href="https://www.teacrossing.com" target="_blank">Tea Crossing</a>
+      </p>
+    </div>
+  </footer>
+  <!-- Footer Section Ends -->
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        return false;
+      }
+
+      if (!email.match(emailPattern)) {
+        alert("Enter a valid email address.");
+        return false;
+      }
+
+      alert("Thank you for your message!");
+      return true;
+    }
+  </script>
+</body>
+</html>
